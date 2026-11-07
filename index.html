@@ -966,8 +966,9 @@
     ]
   },
   "qr": {
-    "_help": "ABA / Bakong KHQR code. image = link to your QR picture. accountName is optional (leave empty to hide). Set image to empty to hide the whole QR section.",
+    "_help": "ABA / Bakong KHQR code. image = QR picture; link = optional click-through URL. accountName is optional (leave empty to hide). Set image to empty to hide the whole QR section.",
     "image": "https://i.postimg.cc/DzCYrvr9/ABA-QR.jpg",
+    "link": "https://pay.ababank.com/oRF8/7opci6zn",
     "accountName": "",
     "title": {"en": "Scan to send a gift", "km": "ស្កេនដើម្បីផ្ញើអំណោយ"},
     "note": {"en": "ABA Mobile · Bakong KHQR", "km": "ស្កេនតាម ABA Mobile ឬកម្មវិធីធនាគារណាមួយដែលគាំទ្រ KHQR"}
@@ -1052,7 +1053,7 @@
   /* ABA / Bakong QR */
   var Q=C.qr, qbox=$('#giftQr');
   if(qbox&&Q&&Q.image){
-    $('#qrImg').src=Q.image; $('#qrLink').href=Q.image;
+    $('#qrImg').src=Q.image; $('#qrLink').href=Q.link||Q.image;
     if(Q.title){T('#qrTitleEn',Q.title.en); T('#qrTitleKm',Q.title.km)}
     if(Q.note){T('#qrNoteEn',Q.note.en); T('#qrNoteKm',Q.note.km)}
     if(Q.accountName){var qn=$('#qrName'); qn.textContent=Q.accountName; qn.hidden=false}
